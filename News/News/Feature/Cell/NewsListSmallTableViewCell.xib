@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsListSmallTableViewCell" rowHeight="153" id="KGk-i7-Jjw" customClass="NewsListSmallTableViewCell" customModule="News" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="153"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="153"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Qbb-dj-N7z">
+                        <rect key="frame" x="225" y="33.333333333333329" width="90" height="87"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Qbb-dj-N7z" secondAttribute="height" id="c8N-N6-gdq"/>
+                            <constraint firstAttribute="height" constant="90" id="dsF-eb-6rO"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hiK-RA-TPP">
+                        <rect key="frame" x="5" y="5" width="215" height="143"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgV-Yb-5Yv">
+                                <rect key="frame" x="0.0" y="0.0" width="215" height="118"/>
+                                <string key="text">Silicon Valley Hasn’t Embraced Trump. But It’s Wavering on Biden Silicon Valley Hasn’t Embraced Trump. But It’s Wavering on Biden</string>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2024-07-11T09:30:00Z" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SsM-HO-PF7">
+                                <rect key="frame" x="0.0" y="126" width="215" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HT3-Va-cwa">
+                        <rect key="frame" x="0.0" y="152" width="320" height="1"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="lPU-R5-kZl"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="HT3-Va-cwa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="2sa-Rm-Nl3"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="SsM-HO-PF7" secondAttribute="bottom" constant="5" id="EJ4-IH-6ZG"/>
+                    <constraint firstItem="hiK-RA-TPP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="FKu-Xi-Kzb"/>
+                    <constraint firstItem="hiK-RA-TPP" firstAttribute="centerY" secondItem="Qbb-dj-N7z" secondAttribute="centerY" id="LLk-Zr-Aic"/>
+                    <constraint firstAttribute="trailing" secondItem="Qbb-dj-N7z" secondAttribute="trailing" constant="5" id="Nrp-t3-h5L"/>
+                    <constraint firstItem="Qbb-dj-N7z" firstAttribute="leading" secondItem="hiK-RA-TPP" secondAttribute="trailing" constant="5" id="Rvo-BY-RXS"/>
+                    <constraint firstAttribute="bottom" secondItem="HT3-Va-cwa" secondAttribute="bottom" id="VWt-3w-YED"/>
+                    <constraint firstItem="Qbb-dj-N7z" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="bC2-pH-aiY"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Qbb-dj-N7z" secondAttribute="bottom" constant="5" id="osx-E1-KMi"/>
+                    <constraint firstAttribute="trailing" secondItem="HT3-Va-cwa" secondAttribute="trailing" id="trc-a9-ZbY"/>
+                    <constraint firstItem="jgV-Yb-5Yv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="vuW-vz-fyD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="SsM-HO-PF7" id="Vb8-pi-ncc"/>
+                <outlet property="newsImageView" destination="Qbb-dj-N7z" id="DLx-sZ-onA"/>
+                <outlet property="titleLabel" destination="jgV-Yb-5Yv" id="YM1-N3-0tx"/>
+            </connections>
+            <point key="canvasLocation" x="13.740458015267174" y="51.056338028169016"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="photo.artframe" catalog="system" width="128" height="93"/>
+    </resources>
+</document>

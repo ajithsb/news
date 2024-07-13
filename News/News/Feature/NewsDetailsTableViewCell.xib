@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsDetailsTableViewCell" rowHeight="558" id="kMb-cM-w9a" userLabel="NewsDetailsTableViewCell" customClass="NewsDetailsTableViewCell" customModule="News" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="389" height="558"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kMb-cM-w9a" id="iJC-yi-N8B" customClass="NewsDetailsBigTableViewCell" customModule="News" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="389" height="558"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4gk-x1-TPS">
+                        <rect key="frame" x="0.0" y="0.0" width="389" height="200"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="200" id="iI6-Nk-D7W"/>
+                        </constraints>
+                        <imageReference key="image" image="placeholder" symbolScale="large"/>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tdh-NO-qtR">
+                        <rect key="frame" x="10" y="215" width="369" height="192.33333333333337"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v73-8S-Ul2">
+                                <rect key="frame" x="0.0" y="0.0" width="369" height="50.666666666666664"/>
+                                <string key="text">Silicon Valley Hasn’t Embraced Trump. But It’s Wavering on Biden Silicon Valley Hasn’t Embraced Trump. But It’s Wavering on Biden</string>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="djp-dh-GUW">
+                                <rect key="frame" x="0.0" y="60.666666666666686" width="369" height="0.6666666666666643"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.69999999999999996" id="2uQ-gk-btX"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cMP-mE-h4I">
+                                <rect key="frame" x="0.0" y="71.333333333333314" width="369" height="19.333333333333329"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40y-Bu-uPc">
+                                        <rect key="frame" x="0.0" y="0.0" width="53.333333333333336" height="19.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Ajith" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBn-Um-tHV">
+                                        <rect key="frame" x="58.333333333333343" y="0.0" width="310.66666666666663" height="19.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2024-07-11T09:30:00Z" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2LO-kK-jBP">
+                                <rect key="frame" x="0.0" y="100.66666666666669" width="369" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L8d-H5-Veh">
+                                <rect key="frame" x="0.0" y="127.6666666666667" width="369" height="0.6666666666666714"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.69999999999999996" id="blv-6s-wkt"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9a-RH-Wx2">
+                                <rect key="frame" x="0.0" y="138.33333333333331" width="369" height="54"/>
+                                <string key="text">Silicon Valley Hasn’t Embraced Trump. But It’s Wavering on Biden Silicon Valley Hasn’t Embraced Trump. But It’s Wavering on Biden</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="R9a-RH-Wx2" secondAttribute="bottom" constant="150.66999999999999" id="1qd-37-6Vq"/>
+                    <constraint firstItem="tdh-NO-qtR" firstAttribute="leading" secondItem="iJC-yi-N8B" secondAttribute="leading" constant="10" id="4JV-3Q-OBG"/>
+                    <constraint firstItem="tdh-NO-qtR" firstAttribute="top" secondItem="4gk-x1-TPS" secondAttribute="bottom" constant="15" id="E1i-6x-ORg"/>
+                    <constraint firstItem="4gk-x1-TPS" firstAttribute="top" secondItem="iJC-yi-N8B" secondAttribute="top" id="G5V-x9-kcm"/>
+                    <constraint firstAttribute="trailing" secondItem="4gk-x1-TPS" secondAttribute="trailing" id="a4j-hg-m8j"/>
+                    <constraint firstItem="4gk-x1-TPS" firstAttribute="leading" secondItem="iJC-yi-N8B" secondAttribute="leading" id="bZZ-ak-tXT"/>
+                    <constraint firstAttribute="trailing" secondItem="tdh-NO-qtR" secondAttribute="trailing" constant="10" id="ohM-0r-uoN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="authorLabel" destination="vBn-Um-tHV" id="8HC-Lp-sHW"/>
+                <outlet property="dateLabel" destination="2LO-kK-jBP" id="Aj3-gy-bVg"/>
+                <outlet property="descriptionLabel" destination="R9a-RH-Wx2" id="WTN-Fy-ibq"/>
+                <outlet property="newsImageView" destination="4gk-x1-TPS" id="FGT-Tz-wgo"/>
+                <outlet property="titleLabel" destination="v73-8S-Ul2" id="pnR-bK-GTG"/>
+            </connections>
+            <point key="canvasLocation" x="-4" y="332"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="placeholder" width="100" height="100"/>
+    </resources>
+</document>
