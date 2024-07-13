@@ -35,7 +35,6 @@ class BaseViewController: UIViewController {
     // MARK: - IBActions
     
     @objc func hambergerButtonTapped() {
-        print("Leading button tapped")
     }
    
 }

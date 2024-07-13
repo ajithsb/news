@@ -45,13 +45,10 @@ extension UIImageView {
                 if (error as? URLError)?.code == .cancelled {
                     return
                 }
-
-                print(error)
                 return
             }
 
             guard let data = data, let downloadedImage = UIImage(data: data) else {
-                print("unable to extract image")
                 return
             }
             ImageCache.shared.save(image: downloadedImage, forKey: urlString)
