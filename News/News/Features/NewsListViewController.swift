@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  News
 //
-//  Created by Aj on 13/07/24.
+//  Created by Ajith SB
 //
 
 import UIKit
@@ -41,11 +41,21 @@ class NewsListViewController: BaseViewController {
         vm.callNews()
         vm.onComplete = { [weak self] in
             DispatchQueue.main.async {
-                if ((self?.activityIndicator.isAnimating) != nil) {
+                if self?.activityIndicator.isAnimating == true {
                     self?.activityIndicator.stopAnimating()
                 }
                 self?.tableView.reloadData()
                 self?.removeLoadingFooter()
+            }
+        }
+        vm.onError = { [weak self] in
+            DispatchQueue.main.async {
+                if self?.activityIndicator.isAnimating == true {
+                    self?.activityIndicator.stopAnimating()
+                }
+                self?.tableView.reloadData()
+                self?.removeLoadingFooter()
+                self?.showToast(message: self?.vm.errorMessage ?? "")
             }
         }
     }
@@ -59,6 +69,11 @@ extension NewsListViewController: UISearchBarDelegate {
         vm.search = searchText
         vm.filterWithSearch()
     }
+    
+    func searchBarSearchButtonClicked(_ seachBar: UISearchBar) {
+        self.view.endEditing(true)
+    }
+
 }
 
 // MARK: - UITableView

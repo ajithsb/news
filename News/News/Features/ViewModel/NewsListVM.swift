@@ -2,7 +2,7 @@
 //  NewsListVM.swift
 //  News
 //
-//  Created by Aj on 13/07/24.
+//  Created by Ajith SB 
 //
 
 import Foundation
@@ -11,11 +11,14 @@ class NewsListVM {
     
     var totalResult = 0
     var page = 1
-    let pageSize = 10
+    let pageSize = Constants.ConstantValues.pageSize
     var onComplete: (() -> Void)?
+    var onError: (() -> Void)?
+
     var newsListDataFull: [Article] = []
     var newsListData: [Article] = []
     var search = ""
+    var errorMessage = ""
     
     func callNews(search: String = Constants.ConstantValues.newsConsatnt) {
         if let url = URL(string: Constants.API.baseURL) {
@@ -36,7 +39,8 @@ class NewsListVM {
                     self?.filterWithSearch()
                 case .failure(let error):
                     // Handle error
-                    print("GET request failed with error: \(error.localizedDescription)")
+                    self?.errorMessage = "\(error.localizedDescription)"
+                    self?.onError?()
                 }
             }
         }

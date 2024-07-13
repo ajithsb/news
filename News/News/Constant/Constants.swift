@@ -2,7 +2,7 @@
 //  Constants.swift
 //  News
 //
-//  Created by Aj on 13/07/24.
+//  Created by Ajith SB 
 //
 
 import Foundation
@@ -25,6 +25,7 @@ enum Constants {
     enum ConstantValues {
         static let newsConsatnt = "bitcoin"
         static let news = "News"
+        static let pageSize = 25
     }
     
 }
