@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsListBigTableViewCell" rowHeight="335" id="KGk-i7-Jjw" customClass="NewsListBigTableViewCell" customModule="News" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="389" height="335"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="389" height="335"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PEl-XO-3yq">
+                        <rect key="frame" x="0.0" y="0.0" width="389" height="200"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="200" id="ot6-az-HQc"/>
+                        </constraints>
+                        <imageReference key="image" image="placeholder" symbolScale="large"/>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fsj-XL-w1W">
+                        <rect key="frame" x="5" y="220" width="379" height="86"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2Q-q6-Btw">
+                                <rect key="frame" x="0.0" y="0.0" width="379" height="61"/>
+                                <string key="text">Silicon Valley Hasn’t Embraced Trump. But It’s Wavering on Biden Silicon Valley Hasn’t Embraced Trump. But It’s Wavering on Biden</string>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2024-07-11T09:30:00Z" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4y-Wi-eaL">
+                                <rect key="frame" x="0.0" y="69" width="379" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGa-lT-THy">
+                        <rect key="frame" x="0.0" y="334" width="389" height="1"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="L4c-Ux-HYI"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="PEl-XO-3yq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8yL-qi-PtM"/>
+                    <constraint firstItem="QGa-lT-THy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="QeS-8r-nTA"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="f4y-Wi-eaL" secondAttribute="bottom" constant="10" id="SUA-eK-69A"/>
+                    <constraint firstAttribute="trailing" secondItem="Fsj-XL-w1W" secondAttribute="trailing" constant="5" id="WL2-4D-YzY"/>
+                    <constraint firstItem="Fsj-XL-w1W" firstAttribute="top" secondItem="PEl-XO-3yq" secondAttribute="bottom" constant="20" id="gYm-Iw-92q"/>
+                    <constraint firstAttribute="trailing" secondItem="QGa-lT-THy" secondAttribute="trailing" id="nnC-vA-4NB"/>
+                    <constraint firstAttribute="bottom" secondItem="QGa-lT-THy" secondAttribute="bottom" id="pzV-ER-u13"/>
+                    <constraint firstItem="Fsj-XL-w1W" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="rRn-HA-H5h"/>
+                    <constraint firstItem="PEl-XO-3yq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="sny-1d-dhK"/>
+                    <constraint firstAttribute="trailing" secondItem="PEl-XO-3yq" secondAttribute="trailing" id="tvv-vU-TyS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="f4y-Wi-eaL" id="HG5-nT-Bbq"/>
+                <outlet property="newsImageView" destination="PEl-XO-3yq" id="A4d-me-ZjV"/>
+                <outlet property="titleLabel" destination="k2Q-q6-Btw" id="i8q-QZ-t9w"/>
+            </connections>
+            <point key="canvasLocation" x="-40.458015267175568" y="8.8028169014084519"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="placeholder" width="100" height="100"/>
+    </resources>
+</document>
