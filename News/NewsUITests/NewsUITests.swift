@@ -2,7 +2,7 @@
 //  NewsUITests.swift
 //  NewsUITests
 //
-//  Created by Aj on 13/07/24.
+//  Created by Ajith SB 
 //
 
 import XCTest

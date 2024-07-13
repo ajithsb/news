@@ -2,7 +2,7 @@
 //  NewsDetailsViewController.swift
 //  News
 //
-//  Created by Aj on 13/07/24.
+//  Created by Ajith SB 
 //
 
 import UIKit
