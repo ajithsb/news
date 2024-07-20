@@ -30,14 +30,10 @@ class CoreDataManager {
     
     // MARK: - Core Data Saving support
     func saveContext() {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
+        do {
+            try context.save()
+        } catch {
+            print("Error saving context: \(error)")
         }
     }
     
@@ -53,22 +49,26 @@ class CoreDataManager {
             return false
         }
     }
-    
-    func saveArticle(_ article: Article) {
-        // Check if article with the same title already exists
-        if articleExists(withTitle: article.title ?? "") {
-            print("Article with title \(article.title ?? "") already exists.")
-            return
+    func saveArticle(_ article: Article) -> Bool {
+        guard let title = article.title else {
+            print("Article title is nil.")
+            return false
+        }
+        
+        if articleExists(withTitle: title) {
+            print("Article with title '\(title)' already exists.")
+            return false
         }
         
         let entity = NSEntityDescription.entity(forEntityName: "ArticleEntity", in: context)!
         let newArticle = ArticleEntity(entity: entity, insertInto: context)
         newArticle.author = article.author
-        newArticle.title = article.title
+        newArticle.title = title
         newArticle.articleDescription = article.description
         newArticle.url = article.url
         newArticle.urlToImage = article.urlToImage
         saveContext()
+        return true
     }
     
     // MARK: - Fetch Articles

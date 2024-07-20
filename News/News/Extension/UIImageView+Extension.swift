@@ -6,10 +6,11 @@
 //
 
 import UIKit
+
 extension UIImageView {
     private static var taskKey = 0
     private static var urlKey = 0
-    // objc_getAssociatedObject. Returns the value associated with a given object for a given key.
+
     private var currentTask: URLSessionTask? {
         get { objc_getAssociatedObject(self, &UIImageView.taskKey) as? URLSessionTask }
         set { objc_setAssociatedObject(self, &UIImageView.taskKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
@@ -21,22 +22,20 @@ extension UIImageView {
     }
 
     func loadImageAsync(with urlString: String?, placeholder: UIImage? = UIImage(named: "placeholder")) {
-
         weak var oldTask = currentTask
         currentTask = nil
         oldTask?.cancel()
 
         self.image = placeholder
-        guard let urlString = urlString else { return }
+        guard let urlString = urlString, let url = URL(string: urlString) else { return }
 
-        // check cache
+        // Check cache
         if let cachedImage = ImageCache.shared.image(forKey: urlString) {
             self.image = cachedImage
             return
         }
 
-        // download
-        guard let url = URL(string: urlString) else { return }
+        // Download
         currentURL = url
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
             self?.currentTask = nil
@@ -45,12 +44,15 @@ extension UIImageView {
                 if (error as? URLError)?.code == .cancelled {
                     return
                 }
+                print("Error downloading image: \(error.localizedDescription)")
                 return
             }
 
             guard let data = data, let downloadedImage = UIImage(data: data) else {
+                print("Failed to decode image data")
                 return
             }
+
             ImageCache.shared.save(image: downloadedImage, forKey: urlString)
             if url == self?.currentURL {
                 DispatchQueue.main.async {
@@ -70,7 +72,7 @@ final class ImageCache {
     static let shared = ImageCache()
 
     private init() {
-        // make sure to purge cache on memory pressure
+        // Make sure to purge cache on memory pressure
         observer = NotificationCenter.default.addObserver(
             forName: UIApplication.didReceiveMemoryWarningNotification,
             object: nil,
@@ -81,7 +83,9 @@ final class ImageCache {
     }
 
     deinit {
-        NotificationCenter.default.removeObserver(observer!)
+        if let observer = observer {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
 
     func image(forKey key: String) -> UIImage? {
