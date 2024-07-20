@@ -35,6 +35,8 @@
 		21DB4FE12C4256CF0056BAFF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DB4FE02C4256CF0056BAFF /* BaseViewController.swift */; };
 		21DB4FED2C425D2E0056BAFF /* NewsDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21DB4FEC2C425D2E0056BAFF /* NewsDetailsTableViewCell.xib */; };
 		21DB4FEE2C425D2E0056BAFF /* NewsDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DB4FEB2C425D2E0056BAFF /* NewsDetailsTableViewCell.swift */; };
+		21EA796E2C4C2A7500DB9B51 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EA796D2C4C2A7500DB9B51 /* DataManager.swift */; };
+		21EA79712C4C327300DB9B51 /* NewsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21EA796F2C4C327300DB9B51 /* NewsModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		21DB4FE02C4256CF0056BAFF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		21DB4FEB2C425D2E0056BAFF /* NewsDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		21DB4FEC2C425D2E0056BAFF /* NewsDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		21EA796D2C4C2A7500DB9B51 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		21EA79702C4C327300DB9B51 /* NewsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,8 +249,8 @@
 		21DB4FC72C41AD770056BAFF /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				217EB7AA2C46E9010032D02F /* NetworkCheck.swift */,
-				21DB4FC82C41AD9E0056BAFF /* NetworkManager.swift */,
+				21EA796C2C4C2A5200DB9B51 /* DataManager */,
+				21EA796B2C4C2A4800DB9B51 /* Network */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -308,6 +312,24 @@
 				21DB4FEC2C425D2E0056BAFF /* NewsDetailsTableViewCell.xib */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		21EA796B2C4C2A4800DB9B51 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				217EB7AA2C46E9010032D02F /* NetworkCheck.swift */,
+				21DB4FC82C41AD9E0056BAFF /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		21EA796C2C4C2A5200DB9B51 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				21EA796D2C4C2A7500DB9B51 /* DataManager.swift */,
+				21EA796F2C4C327300DB9B51 /* NewsModel.xcdatamodeld */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		21FEE07D2C426B5F00F7CDBB /* Main */ = {
@@ -455,6 +477,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				21DB4FDC2C422B0A0056BAFF /* NewsDetailsViewController.swift in Sources */,
+				21EA79712C4C327300DB9B51 /* NewsModel.xcdatamodeld in Sources */,
+				21EA796E2C4C2A7500DB9B51 /* DataManager.swift in Sources */,
 				21DB4FDA2C422A9B0056BAFF /* Article.swift in Sources */,
 				214EB8AF2C41992D0053F980 /* NewsListSmallTableViewCell.swift in Sources */,
 				214EB8A02C4187640053F980 /* UISearchBar+Extension.swift in Sources */,
@@ -813,6 +837,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		21EA796F2C4C327300DB9B51 /* NewsModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				21EA79702C4C327300DB9B51 /* NewsModel.xcdatamodel */,
+			);
+			currentVersion = 21EA79702C4C327300DB9B51 /* NewsModel.xcdatamodel */;
+			name = NewsModel.xcdatamodeld;
+			path = /Users/aj/Documents/News/News/News/Services/DataManager/NewsModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 214EB8602C4176130053F980 /* Project object */;
 }

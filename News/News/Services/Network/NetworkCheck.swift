@@ -16,7 +16,6 @@ class NetworkCheck {
     
     private init() {
         monitor = NWPathMonitor()
-        monitor.start(queue: queue)
         setupPathUpdateHandler()
     }
     
@@ -25,16 +24,14 @@ class NetworkCheck {
     }
     
     private func setupPathUpdateHandler() {
-        monitor.pathUpdateHandler = { path in
-            if path.status == .satisfied {
-                print("We're connected!")
-                NotificationCenter.default.post(name: .networkStatusChanged, object: nil, userInfo: ["isConnected": true])
-            } else {
-                print("No connection.")
-                NotificationCenter.default.post(name: .networkStatusChanged, object: nil, userInfo: ["isConnected": false])
-            }
+        monitor.pathUpdateHandler = { [weak self] path in
+            guard let self = self else { return }
+            let isConnected = path.status == .satisfied
+            print(isConnected ? "We're connected!" : "No connection.")
+            NotificationCenter.default.post(name: .networkStatusChanged, object: nil, userInfo: ["isConnected": isConnected])
             print("Is connection expensive: \(path.isExpensive)")
         }
+        monitor.start(queue: queue)
     }
     
     func startMonitoring() {

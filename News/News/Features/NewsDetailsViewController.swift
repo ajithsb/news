@@ -13,7 +13,7 @@ class NewsDetailsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
-    var data: Article?
+    var data: ArticleEntity?
     
     // MARK: - Life cycle
     

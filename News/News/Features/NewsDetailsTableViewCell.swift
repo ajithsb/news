@@ -35,11 +35,11 @@ class NewsDetailsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func config(data: Article) {
+    func config(data: ArticleEntity) {
         titleLabel.text = data.title ?? ""
         dateLabel.text = data.publishedAt ?? ""
         newsImageView.loadImageAsync(with: data.urlToImage ?? "")
-        descriptionLabel.text = data.description ?? ""
+        descriptionLabel.text = data.description
         authorLabel.text = data.author ?? ""
     }
     

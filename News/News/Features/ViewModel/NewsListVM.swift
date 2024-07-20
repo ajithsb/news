@@ -2,7 +2,7 @@
 //  NewsListVM.swift
 //  News
 //
-//  Created by Ajith SB 
+//  Created by Ajith SB
 //
 
 import Foundation
@@ -14,39 +14,45 @@ class NewsListVM {
     let pageSize = Constants.ConstantValues.pageSize
     var onComplete: (() -> Void)?
     var onError: (() -> Void)?
-
-    var newsListDataFull: [Article] = []
-    var newsListData: [Article] = []
+    
+    var newsListDataFull: [ArticleEntity] = []
+    var newsListData: [ArticleEntity] = []
     var search = ""
     var errorMessage = ""
     
     func callNews(search: String = Constants.ConstantValues.newsConsatnt) {
         if let url = URL(string: Constants.API.baseURL) {
             let queryParams = [Constants.QueryParam.q: "\(search)", Constants.QueryParam.page: "\(page)", Constants.QueryParam.pageSize: "\(pageSize)",Constants.QueryParam.apiKey: Constants.API.apiKeyValue]
-            NetworkManager.shared.getRequest(url: url, queryParams: queryParams) { [weak self] (result: Result<NewsModel, Error>) in
-                switch result {
-                case .success(let posts):
-                    // Handle success, use the array of Post models
-                    guard let articles = posts.articles, let totalData = posts.totalResults else {
-                        return
+            if NetworkCheck.shared.isConnected {
+                NetworkManager.shared.getRequest(url: url, queryParams: queryParams) { [weak self] (result: Result<NewsModel, Error>) in
+                    switch result {
+                    case .success(let posts):
+                        // Handle success, use the array of Post models
+                        guard let articles = posts.articles, let totalData = posts.totalResults else {
+                            return
+                        }
+                        self?.totalResult = totalData
+                        for item in articles {
+                            CoreDataManager.shared.saveArticle(item)
+                        }
+                        self?.filterWithSearch()
+                    case .failure(let error):
+                        // Handle error
+                        self?.errorMessage = "\(error.localizedDescription)"
+                        self?.onError?()
                     }
-                    self?.totalResult = totalData
-                    if self?.page == 1 {
-                        self?.newsListDataFull = articles
-                    }else{
-                        self?.newsListDataFull.append(contentsOf: articles)
-                    }
-                    self?.filterWithSearch()
-                case .failure(let error):
-                    // Handle error
-                    self?.errorMessage = "\(error.localizedDescription)"
-                    self?.onError?()
                 }
+            } else {
+                self.errorMessage = "No connection."
+                self.onError?()
+                filterWithSearch()
             }
         }
     }
     
     func filterWithSearch(){
+        guard let articles = CoreDataManager.shared.fetchArticles() else { return }
+        newsListDataFull = articles
         if !search.isEmpty {
             newsListData = newsListDataFull.filter { news in
                 if let title = news.title {
@@ -63,4 +69,6 @@ class NewsListVM {
     func isAlldataFetched() -> Bool {
         return (page * pageSize) > totalResult
     }
+    
 }
+
