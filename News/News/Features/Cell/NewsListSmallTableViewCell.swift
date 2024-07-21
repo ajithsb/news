@@ -33,9 +33,9 @@ class NewsListSmallTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     func config(data: ArticleEntity) {
-        titleLabel.text = data.title ?? ""
-        dateLabel.text = data.publishedAt ?? ""
-        newsImageView.loadImageAsync(with: data.urlToImage ?? "")
+        titleLabel.text = data.title
+        dateLabel.text = data.publishedAt
+        newsImageView.loadImageAsync(with: data.urlToImage)
     }
     
 }

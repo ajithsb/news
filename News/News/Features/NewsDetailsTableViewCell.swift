@@ -30,11 +30,11 @@ class NewsDetailsTableViewCell: UITableViewCell {
     }
     
     func config(data: ArticleEntity) {
-        titleLabel.text = data.title ?? ""
-        dateLabel.text = data.publishedAt ?? ""
-        newsImageView.loadImageAsync(with: data.urlToImage ?? "")
+        titleLabel.text = data.title
+        dateLabel.text = data.publishedAt
+        newsImageView.loadImageAsync(with: data.urlToImage)
         descriptionLabel.text = data.articleDescription
-        authorLabel.text = data.author ?? ""
+        authorLabel.text = data.author
     }
     
 }
