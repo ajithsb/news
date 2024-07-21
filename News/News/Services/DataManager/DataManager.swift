@@ -8,7 +8,18 @@
 import Foundation
 import CoreData
 
-class CoreDataManager {
+// Protocol for managing articles
+protocol ArticleManaging {
+    func saveArticle(_ article: Article)
+    func articleExists(withTitle title: String) -> Bool
+}
+
+// Protocol for fetching articles
+protocol ArticleFetching {
+    func fetchArticles() -> [ArticleEntity]?
+}
+
+class CoreDataManager: ArticleManaging, ArticleFetching {
     static let shared = CoreDataManager()
     private init() {}
     
@@ -37,18 +48,7 @@ class CoreDataManager {
         }
     }
     
-    func articleExists(withTitle title: String) -> Bool {
-        let fetchRequest: NSFetchRequest<ArticleEntity> = ArticleEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "title == %@", title)
-        
-        do {
-            let count = try context.count(for: fetchRequest)
-            return count > 0
-        } catch {
-            print("Failed to check if article exists: \(error)")
-            return false
-        }
-    }
+    // MARK: - ArticleManaging Protocol Methods
     func saveArticle(_ article: Article) {
         guard let title = article.title else {
             print("Article title is nil.")
@@ -71,7 +71,20 @@ class CoreDataManager {
         saveContext()
     }
     
-    // MARK: - Fetch Articles
+    func articleExists(withTitle title: String) -> Bool {
+        let fetchRequest: NSFetchRequest<ArticleEntity> = ArticleEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "title == %@", title)
+        
+        do {
+            let count = try context.count(for: fetchRequest)
+            return count > 0
+        } catch {
+            print("Failed to check if article exists: \(error)")
+            return false
+        }
+    }
+    
+    // MARK: - ArticleFetching Protocol Method
     func fetchArticles() -> [ArticleEntity]? {
         let fetchRequest: NSFetchRequest<ArticleEntity> = ArticleEntity.fetchRequest()
         do {

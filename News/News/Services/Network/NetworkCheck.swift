@@ -25,7 +25,7 @@ class NetworkCheck {
     
     private func setupPathUpdateHandler() {
         monitor.pathUpdateHandler = { [weak self] path in
-            guard let self = self else { return }
+            guard self != nil else { return }
             let isConnected = path.status == .satisfied
             print(isConnected ? "We're connected!" : "No connection.")
             NotificationCenter.default.post(name: .networkStatusChanged, object: nil, userInfo: ["isConnected": isConnected])
