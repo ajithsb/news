@@ -29,6 +29,8 @@ class NewsListViewController: BaseViewController {
     
     private func setUpUI(){
         serarchBar.applyTextFieldBorder()
+        serarchBar.accessibilityIdentifier = "searchField"
+
         tableView.register(NewsListBigTableViewCell.nib(), forCellReuseIdentifier: NewsListBigTableViewCell.identifier)
         tableView.register(NewsListSmallTableViewCell.nib(), forCellReuseIdentifier: NewsListSmallTableViewCell.identifier)
         

@@ -25,7 +25,7 @@ class NewsDetailsViewController: UIViewController {
     }
     // MARK: - Private func
     
-    private func setupNavigationTitle() {
+    func setupNavigationTitle() {
         // Create and customize the UILabel
         let titleLabel = UILabel()
         titleLabel.text = Constants.ConstantValues.news

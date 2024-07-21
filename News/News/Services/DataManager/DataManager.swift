@@ -49,15 +49,15 @@ class CoreDataManager {
             return false
         }
     }
-    func saveArticle(_ article: Article) -> Bool {
+    func saveArticle(_ article: Article) {
         guard let title = article.title else {
             print("Article title is nil.")
-            return false
+            return
         }
         
         if articleExists(withTitle: title) {
             print("Article with title '\(title)' already exists.")
-            return false
+            return
         }
         
         let entity = NSEntityDescription.entity(forEntityName: "ArticleEntity", in: context)!
@@ -69,7 +69,6 @@ class CoreDataManager {
         newArticle.urlToImage = article.urlToImage
         newArticle.publishedAt = article.publishedAt
         saveContext()
-        return true
     }
     
     // MARK: - Fetch Articles
