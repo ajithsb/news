@@ -67,6 +67,7 @@ class CoreDataManager {
         newArticle.articleDescription = article.description
         newArticle.url = article.url
         newArticle.urlToImage = article.urlToImage
+        newArticle.publishedAt = article.publishedAt
         saveContext()
         return true
     }

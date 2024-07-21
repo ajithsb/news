@@ -27,7 +27,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         NetworkCheck.shared.startMonitoring()
         
         // Register global observer for network status changes
-        NotificationCenter.default.addObserver(self, selector: #selector(networkStatusChanged(_:)), name: .networkStatusChanged, object: nil)
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -63,14 +62,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
     
-    
 }
 
-extension SceneDelegate {
-    @MainActor
-    @objc func networkStatusChanged(_ notification: Notification) {
-            if let isConnected = notification.userInfo?["isConnected"] as? Bool {
-                print(isConnected ? "Connected to the internet" : "No internet connection")
-        }
-    }
-}

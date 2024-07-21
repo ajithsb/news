@@ -35,24 +35,20 @@ class NewsListViewController: BaseViewController {
     }
     
     private func fetchDataFromServer(){
-        if vm.page == 1 {
+        if NetworkCheck.shared.isConnected && vm.isFirstPage(){
             activityIndicator.startAnimating()
         }
         vm.callNews()
         vm.onComplete = { [weak self] in
             DispatchQueue.main.async {
-                if self?.activityIndicator.isAnimating == true {
-                    self?.activityIndicator.stopAnimating()
-                }
+                self?.activityIndicator.stopAnimating()
                 self?.tableView.reloadData()
                 self?.removeLoadingFooter()
             }
         }
         vm.onError = { [weak self] in
             DispatchQueue.main.async {
-                if self?.activityIndicator.isAnimating == true {
-                    self?.activityIndicator.stopAnimating()
-                }
+                self?.activityIndicator.stopAnimating()
                 self?.tableView.reloadData()
                 self?.removeLoadingFooter()
                 self?.showToast(message: self?.vm.errorMessage ?? "")

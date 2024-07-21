@@ -39,7 +39,7 @@ class NewsDetailsTableViewCell: UITableViewCell {
         titleLabel.text = data.title ?? ""
         dateLabel.text = data.publishedAt ?? ""
         newsImageView.loadImageAsync(with: data.urlToImage ?? "")
-        descriptionLabel.text = data.description
+        descriptionLabel.text = data.articleDescription
         authorLabel.text = data.author ?? ""
     }
     

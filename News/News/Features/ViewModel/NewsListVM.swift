@@ -70,5 +70,9 @@ class NewsListVM {
         return (page * pageSize) > totalResult
     }
     
+    func isFirstPage() -> Bool {
+        return page == 1
+    }
+    
 }
 
