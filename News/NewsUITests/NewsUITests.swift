@@ -50,8 +50,6 @@ final class NewsUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
-        let searchFieldPlaceholder = "Search here..."  // Correct placeholder text
-        
         let searchField = app/*@START_MENU_TOKEN@*/.searchFields["Serach here..."]/*[[".otherElements[\"searchField\"].searchFields[\"Serach here...\"]",".searchFields[\"Serach here...\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
         searchField.tap()
         
@@ -61,16 +59,12 @@ final class NewsUITests: XCTestCase {
             app.keys[String(character)].tap()
         }
         
-        // Clear the search field
-        // Wait for the "Clear text" button to appear
-        let clearTextButton = searchField.buttons["Clear text"]
-        let buttonExistsPredicate = NSPredicate(format: "exists == true")
-        expectation(for: buttonExistsPredicate, evaluatedWith: clearTextButton, handler: nil)
-        waitForExpectations(timeout: 20, handler: nil) // Increased timeout
+        Thread.sleep(forTimeInterval: 2.0)
+
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .table).element.tap()
         
-        // Ensure the "Clear text" button exists and tap it
-        XCTAssertTrue(clearTextButton.exists, "Clear text button should exist")
-        clearTextButton.tap()
+        Thread.sleep(forTimeInterval: 2.0)
+
         
         // Tap on a specific news item
         let tablesQuery = app.tables
@@ -81,9 +75,19 @@ final class NewsUITests: XCTestCase {
         
         // Tap on the News button in the navigation bar
         let newsButton = app.navigationBars["News"].buttons["News"]
-        XCTAssertTrue(newsButton.exists, "News button should exist")
         newsButton.tap()
         
+        // Clear the search field
+        let clearTextButton = searchField.buttons["Clear text"]
+        XCTAssertTrue(clearTextButton.waitForExistence(timeout: 20), "Clear text button should exist")
+        
+        clearTextButton.tap()
+        
+        Thread.sleep(forTimeInterval: 2.0)
+        
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .table).element.tap()
+        
+
         // Tap on another specific news item
         let newNewsTitle = "A Tiny Texas Village Is About To Annex a Gigantic Bitcoin Mine"
         let newNewsStaticText = tablesQuery.staticTexts[newNewsTitle]
@@ -92,5 +96,7 @@ final class NewsUITests: XCTestCase {
         
         // Tap on the News button again
         newsButton.tap()
+                
     }
 }
+
