@@ -51,12 +51,10 @@ class CoreDataManager: ArticleManaging, ArticleFetching {
     // MARK: - ArticleManaging Protocol Methods
     func saveArticle(_ article: Article) {
         guard let title = article.title else {
-            print("Article title is nil.")
             return
         }
         
         if articleExists(withTitle: title) {
-            print("Article with title '\(title)' already exists.")
             return
         }
         
