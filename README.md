@@ -28,10 +28,10 @@ Once the app is launched, it will automatically fetch news data from the API and
 1. Fetches and parses news data from the News API.
 2. Displays a list of news articles.
 3. Allows users to view detailed news articles.
-4. Not Saves news data offline using CoreData/SQLite.
+4. Saves news data offline using CoreData.
 5. Follows the MVVM design pattern.
 6. Implemented in Swift.
-7. Not included UI and Unit Testing
+7. Included UI and Unit Testing
 
 ## Design
 The design of the app can be found on Figma.

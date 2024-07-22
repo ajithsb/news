@@ -27,9 +27,7 @@ class NetworkCheck {
         monitor.pathUpdateHandler = { [weak self] path in
             guard self != nil else { return }
             let isConnected = path.status == .satisfied
-            print(isConnected ? "We're connected!" : "No connection.")
             NotificationCenter.default.post(name: .networkStatusChanged, object: nil, userInfo: ["isConnected": isConnected])
-            print("Is connection expensive: \(path.isExpensive)")
         }
         monitor.start(queue: queue)
     }
