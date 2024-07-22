@@ -28,19 +28,13 @@ class NewsDetailsTableViewCell: UITableViewCell {
         // Initialization code
         self.selectionStyle = .none
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
-    func config(data: Article) {
-        titleLabel.text = data.title ?? ""
-        dateLabel.text = data.publishedAt ?? ""
-        newsImageView.loadImageAsync(with: data.urlToImage ?? "")
-        descriptionLabel.text = data.description ?? ""
-        authorLabel.text = data.author ?? ""
+    func config(data: ArticleEntity) {
+        titleLabel.text = data.title
+        dateLabel.text = data.publishedAt
+        newsImageView.loadImageAsync(with: data.urlToImage)
+        descriptionLabel.text = data.articleDescription
+        authorLabel.text = data.author
     }
     
 }

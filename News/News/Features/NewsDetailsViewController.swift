@@ -13,7 +13,7 @@ class NewsDetailsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
-    var data: Article?
+    var data: ArticleEntity?
     
     // MARK: - Life cycle
     
@@ -25,7 +25,7 @@ class NewsDetailsViewController: UIViewController {
     }
     // MARK: - Private func
     
-    private func setupNavigationTitle() {
+    func setupNavigationTitle() {
         // Create and customize the UILabel
         let titleLabel = UILabel()
         titleLabel.text = Constants.ConstantValues.news

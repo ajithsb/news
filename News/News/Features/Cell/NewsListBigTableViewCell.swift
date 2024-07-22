@@ -32,10 +32,10 @@ class NewsListBigTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func config(data: Article) {
-        titleLabel.text = data.title ?? ""
-        dateLabel.text = data.publishedAt ?? ""
-        newsImageView.loadImageAsync(with: data.urlToImage ?? "")
+    func config(data: ArticleEntity) {
+        titleLabel.text = data.title
+        dateLabel.text = data.publishedAt
+        newsImageView.loadImageAsync(with: data.urlToImage)
 
     }
     
