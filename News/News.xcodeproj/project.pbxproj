@@ -42,6 +42,10 @@
 		21EA799F2C4D721A00DB9B51 /* MockImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EA799E2C4D721A00DB9B51 /* MockImageView.swift */; };
 		21EA79B32C4D9C4500DB9B51 /* NewsListBigTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EA79B22C4D9C4500DB9B51 /* NewsListBigTableViewCellTests.swift */; };
 		21EA79B52C4D9E3200DB9B51 /* NewsListSmallTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EA79B42C4D9E3200DB9B51 /* NewsListSmallTableViewCellTests.swift */; };
+		21EA79B92C4DB14900DB9B51 /* NewsListVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EA79B82C4DB14800DB9B51 /* NewsListVMTests.swift */; };
+		21EA79BB2C4DBA7200DB9B51 /* NewsListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EA79BA2C4DBA7200DB9B51 /* NewsListViewControllerTests.swift */; };
+		21EA79BE2C4DBCED00DB9B51 /* UISearchBarExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EA79BD2C4DBCED00DB9B51 /* UISearchBarExtensionTests.swift */; };
+		21EA79C02C4DF0ED00DB9B51 /* BaseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EA79BF2C4DF0ED00DB9B51 /* BaseViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +113,10 @@
 		21EA79A42C4D8B5800DB9B51 /* NewsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21EA79B22C4D9C4500DB9B51 /* NewsListBigTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListBigTableViewCellTests.swift; sourceTree = "<group>"; };
 		21EA79B42C4D9E3200DB9B51 /* NewsListSmallTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListSmallTableViewCellTests.swift; sourceTree = "<group>"; };
+		21EA79B82C4DB14800DB9B51 /* NewsListVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListVMTests.swift; sourceTree = "<group>"; };
+		21EA79BA2C4DBA7200DB9B51 /* NewsListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewControllerTests.swift; sourceTree = "<group>"; };
+		21EA79BD2C4DBCED00DB9B51 /* UISearchBarExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarExtensionTests.swift; sourceTree = "<group>"; };
+		21EA79BF2C4DF0ED00DB9B51 /* BaseViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +191,9 @@
 		214EB8812C4176150053F980 /* NewsTests */ = {
 			isa = PBXGroup;
 			children = (
+				21EA79C22C4DF2B100DB9B51 /* Application */,
+				21EA79C12C4DF14900DB9B51 /* Main */,
+				21EA79BC2C4DBCD400DB9B51 /* Extension */,
 				21EA799D2C4D720100DB9B51 /* Mocks */,
 				21EA79922C4D035800DB9B51 /* Features */,
 				214EB8822C4176150053F980 /* NewsTests.swift */,
@@ -406,6 +417,8 @@
 			isa = PBXGroup;
 			children = (
 				21EA79B02C4D9C2C00DB9B51 /* View */,
+				21EA79B82C4DB14800DB9B51 /* NewsListVMTests.swift */,
+				21EA79BA2C4DBA7200DB9B51 /* NewsListViewControllerTests.swift */,
 			);
 			path = NewsList;
 			sourceTree = "<group>";
@@ -425,6 +438,29 @@
 				21EA79B42C4D9E3200DB9B51 /* NewsListSmallTableViewCellTests.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		21EA79BC2C4DBCD400DB9B51 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				21EA79BD2C4DBCED00DB9B51 /* UISearchBarExtensionTests.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		21EA79C12C4DF14900DB9B51 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				21EA79BF2C4DF0ED00DB9B51 /* BaseViewControllerTests.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		21EA79C22C4DF2B100DB9B51 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 		21FEE07D2C426B5F00F7CDBB /* Main */ = {
@@ -629,10 +665,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21EA79BE2C4DBCED00DB9B51 /* UISearchBarExtensionTests.swift in Sources */,
 				21EA79B52C4D9E3200DB9B51 /* NewsListSmallTableViewCellTests.swift in Sources */,
 				21EA79952C4D03A200DB9B51 /* NewsDetailsViewControllerTests.swift in Sources */,
+				21EA79C02C4DF0ED00DB9B51 /* BaseViewControllerTests.swift in Sources */,
+				21EA79B92C4DB14900DB9B51 /* NewsListVMTests.swift in Sources */,
 				214EB8832C4176150053F980 /* NewsTests.swift in Sources */,
 				21EA799F2C4D721A00DB9B51 /* MockImageView.swift in Sources */,
+				21EA79BB2C4DBA7200DB9B51 /* NewsListViewControllerTests.swift in Sources */,
 				21EA79B32C4D9C4500DB9B51 /* NewsListBigTableViewCellTests.swift in Sources */,
 				21EA799B2C4D604E00DB9B51 /* NewsDetailsTableViewCellTests.swift in Sources */,
 			);
