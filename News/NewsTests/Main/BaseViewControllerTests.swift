@@ -22,7 +22,7 @@ class BaseViewControllerTests: XCTestCase {
         viewController = nil
         super.tearDown()
     }
-
+ 
     func testNavigationBarSetup() {
         // Test left bar button item
         let leftBarButtonItem = viewController.navigationItem.leftBarButtonItem
